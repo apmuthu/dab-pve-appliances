@@ -1,6 +1,8 @@
+ssh-keygen
+
 When the container is started, SSHd is set to prevent Root Login.
 Edit
-	/etc/ss/sshd_config
+	/etc/ssh/sshd_config
 and set
 	PermitRootLogin Yes
 
