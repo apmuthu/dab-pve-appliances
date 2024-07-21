@@ -1,0 +1,42 @@
+# cat /etc/debian_version
+12.0
+
+# cat /etc/os-release
+PRETTY_NAME="Devuan GNU/Linux 5 (daedalus)"
+NAME="Devuan GNU/Linux"
+VERSION_ID="5"
+VERSION="5 (daedalus)"
+VERSION_CODENAME="daedalus"
+ID=devuan
+ID_LIKE=debian
+HOME_URL="https://www.devuan.org/"
+SUPPORT_URL="https://devuan.org/os/community"
+BUG_REPORT_URL="https://bugs.devuan.org/"
+
+# cat /etc/issue
+Devuan GNU/Linux daedalus \n \l
+
+# cat /etc/issue.net
+Devuan GNU/Linux daedalus
+
+# cat /etc/apt/sources.list
+deb http://deb.devuan.org/merged daedalus main contrib
+
+# nano /etc/ssh/sshd_config
+ <= PermitRootLogin yes
+# service ssh restart
+
+apt install mlocate zip unzip screen wget curl
+updatedb
+dpkg-query -l | grep ^ii > devual_5_installed_packages.txt
+
+# cat /proc/1/status|egrep -i 'name|state'
+Name:   init
+State:  S (sleeping)
+
+# pidof systemd && echo "systemd" || echo "other"
+other
+
+# [[ -L "/sbin/init" ]] && echo 'systemd' || echo 'systemV'
+systemV
+
