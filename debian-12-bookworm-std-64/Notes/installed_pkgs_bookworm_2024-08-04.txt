@@ -1,3 +1,19 @@
+# cat /etc/debian_version
+12.6
+
+# ssh -V
+OpenSSH_9.2p1 Debian-2+deb12u3, OpenSSL 3.0.13 30 Jan 2024
+
+# openssl version
+OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)
+
+# nano --version
+ GNU nano, version 7.2
+ (C) 2023 the Free Software Foundation and various contributors
+ Compiled options: --disable-libmagic --enable-utf8
+
+# dpkg-query -l | grep ^ii > installed_pkgs_bookworm_2024-08-04.txt
+
 ii  adduser                      3.134                          all          add and remove users and groups
 ii  apt                          2.6.1                          amd64        commandline package manager
 ii  apt-listchanges              3.24                           all          package change history notification tool
@@ -6,9 +22,9 @@ ii  base-files                   12.4+deb12u6                   amd64        Deb
 ii  base-passwd                  3.6.1                          amd64        Debian base system master password and group files
 ii  bash                         5.2.15-2+b7                    amd64        GNU Bourne Again SHell
 ii  bash-completion              1:2.11-6                       all          programmable completion for the bash shell
-ii  bind9-dnsutils               1:9.18.24-1                    amd64        Clients provided with BIND 9
-ii  bind9-host                   1:9.18.24-1                    amd64        DNS Lookup Utility
-ii  bind9-libs:amd64             1:9.18.24-1                    amd64        Shared Libraries used by BIND 9
+ii  bind9-dnsutils               1:9.18.28-1~deb12u2            amd64        Clients provided with BIND 9
+ii  bind9-host                   1:9.18.28-1~deb12u2            amd64        DNS Lookup Utility
+ii  bind9-libs:amd64             1:9.18.28-1~deb12u2            amd64        Shared Libraries used by BIND 9
 ii  bsdextrautils                2.38.1-5+deb12u1               amd64        extra utilities from 4.4BSD-Lite
 ii  bsdutils                     1:2.38.1-5+deb12u1             amd64        basic utilities from 4.4BSD-Lite
 ii  bzip2                        1.0.8-5+b1                     amd64        high-quality block-sorting file compressor - utilities
@@ -264,3 +280,5 @@ ii  wget                         1.21.3-1+b2                    amd64        ret
 ii  whiptail                     0.52.23-1+b1                   amd64        Displays user-friendly dialog boxes from shell scripts
 ii  xz-utils                     5.4.1-0.2                      amd64        XZ-format compression utilities
 ii  zlib1g:amd64                 1:1.2.13.dfsg-1                amd64        compression library - runtime
+
+
