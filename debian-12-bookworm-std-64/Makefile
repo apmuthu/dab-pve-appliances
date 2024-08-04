@@ -4,10 +4,13 @@ BASEDIR:=$(shell dab basedir)
 
 all: info/init_ok
 	dab bootstrap
+	# NOTE: zstd appliances are only supported on PVE >= 7.0, take care on upload!
 	# Bookworm defaults to PermitRootLogin prohibit-password
 	sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/' ${BASEDIR}/etc/ssh/sshd_config
-	dab exec systemctl mask systemd-logind
-	# NOTE: zstd appliances are only supported on PVE >= 7.0, take care on upload!
+	install -m 0755 std_setup ${BASEDIR}/etc/init.d/
+#	dab exec insserv std_setup
+	dab exec update-rc.d std_setup defaults
+	export LC_ALL=C
 	# dab finalize --compressor zstd-max
 	dab finalize
 
